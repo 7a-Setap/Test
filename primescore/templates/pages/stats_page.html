@@ -1,0 +1,66 @@
+<section id="statsPage" class="page">
+  <div class="container">
+    <h2>Statistics</h2>
+    <p class="subtitle">Inspect team and player stats without running a comparison first.</p>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showStatsTab('teamStatsTab', this)">Team Stats</button>
+      <button class="tab-btn" onclick="showStatsTab('playerStatsTab', this)">Player Stats</button>
+    </div>
+
+    <div id="teamStatsTab" class="tab-content active">
+      <div class="compare-controls">
+        <label for="statsLeagueFilter">League</label>
+        <select id="statsLeagueFilter">
+          <option value="">Any League</option>
+          <option value="PL">Premier League</option>
+          <option value="CL">Champions League</option>
+          <option value="BL1">Bundesliga</option>
+          <option value="SA">Serie A</option>
+          <option value="PD">La Liga</option>
+          <option value="FL1">Ligue 1</option>
+        </select>
+      </div>
+
+      <div class="compare-inputs-dynamic">
+        <div class="compare-input-group">
+          <label for="teamStatsSearch">Team</label>
+          <div class="autocomplete-wrapper">
+            <input id="teamStatsSearch" type="text" placeholder="Search for a team…" autocomplete="off" />
+            <div class="autocomplete-suggestions" id="teamStatsSuggestions" style="display:none"></div>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="viewTeamStats()" class="btn-primary">Load Team Stats</button>
+      <div id="individualTeamStatsResult" class="comparison-result"></div>
+    </div>
+
+    <div id="playerStatsTab" class="tab-content" style="display:none">
+      <div class="compare-inputs-dynamic">
+        <div class="compare-input-group" id="statsPlayerSlot">
+          <label>Player</label>
+          <div class="player-slot-selected" id="statsPlayerSelected" style="display:none">
+            <span class="fav-tag">
+              <span class="fav-tag-name" id="statsPlayerName"></span>
+              <button class="fav-tag-remove" id="statsPlayerClear" aria-label="Clear">×</button>
+            </span>
+          </div>
+          <div id="statsPlayerPicker">
+            <div class="autocomplete-wrapper">
+              <input type="text" id="playerStatsTeamSearch" placeholder="Search a team to pick a player…" autocomplete="off" />
+              <div class="autocomplete-suggestions" id="playerStatsTeamSuggestions" style="display:none"></div>
+            </div>
+            <div id="statsPlayerSquadPanel" style="display:none">
+              <p class="squad-label" id="statsPlayerSquadLabel"></p>
+              <div class="squad-list" id="statsPlayerSquadList"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button onclick="viewPlayerStats()" class="btn-primary">Load Player Stats</button>
+      <div id="individualPlayerStatsResult" class="comparison-result"></div>
+    </div>
+  </div>
+</section>

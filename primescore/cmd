@@ -1,0 +1,13 @@
+$env:FOOTBALL_API_KEY=""  
+$env:DB_USER=""
+$env:DB_PASSWORD=""
+python app.py
+-----------------------------------------------------------------------------
+
+python -m venv .venv
+# activate venv
+pip install -r requirements.txt
+export FOOTBALL_API_KEY= "eb8491b3cc2ea1de42c00241343bba5b" DB_USER="postgres" DB_PASSWORD="rokan769"  # or PowerShell $env:...
+psql -d primescore -f db/schema.sql
+python app.py
+-

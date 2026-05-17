@@ -1,0 +1,89 @@
+<section id="settingsPage" class="page">
+  <div class="container">
+    <h2>Settings</h2>
+
+    <div class="section">
+      <h3>Notifications</h3>
+      <div class="setting-item"><label><input type="checkbox" id="goalsNotifications" /> Goal notifications</label></div>
+      <div class="setting-item"><label><input type="checkbox" id="matchStartNotifications" /> Match start notifications</label></div>
+      <div class="setting-item"><label><input type="checkbox" id="matchEndNotifications" /> Match end notifications</label></div>
+      <div class="setting-item"><label><input type="checkbox" id="favTeamNotifications" /> Favourite team notifications</label></div>
+      <div class="setting-item"><label><input type="checkbox" id="favPlayerNotifications" /> Favourite player notifications</label></div>
+      <button onclick="saveNotificationSettings()" class="btn-primary">Save Notifications</button>
+      <p class="error-message" id="settingsMessage"></p>
+    </div>
+
+    <div class="section">
+      <h3>Test Notifications</h3>
+      <p class="subtitle">Send yourself a demo browser notification and email to confirm everything is set up correctly.</p>
+      <button onclick="PrimeScoreApp.sendTestNotification()" class="btn-primary">Send Test Notification</button>
+      <p class="error-message" id="testNotificationMessage"></p>
+    </div>
+
+    <div class="section">
+      <h3>Change Password</h3>
+      <div class="form-group">
+        <label for="currentPassword">Current password</label>
+        <div class="password-field">
+          <input type="password" id="currentPassword" />
+          <button type="button" class="toggle-password" onclick="togglePasswordVisibility('currentPassword')">Show</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="newPassword">New password</label>
+        <div class="password-field">
+          <input type="password" id="newPassword" />
+          <button type="button" class="toggle-password" onclick="togglePasswordVisibility('newPassword')">Show</button>
+        </div>
+      </div>
+      <button onclick="PrimeScoreApp.changePassword()" class="btn-primary">Change Password</button>
+      <p class="error-message" id="passwordMsg"></p>
+    </div>
+
+    <!-- Danger zone: irreversible account actions. Two-step gate (password +
+         typing DELETE) so we don't permanently destroy data on a stray click. -->
+    <div class="section danger-zone">
+      <h3>Danger zone</h3>
+      <p class="subtitle">
+        Deleting your account is permanent. All favourites, notification
+        preferences, and profile data will be removed and cannot be recovered.
+      </p>
+
+      <button
+        type="button"
+        id="deleteAccountToggle"
+        class="btn-danger"
+        onclick="PrimeScoreApp.toggleDeleteAccountPanel(true)"
+      >
+        Delete my account
+      </button>
+
+      <div id="deleteAccountPanel" class="delete-account-panel" style="display:none">
+        <p class="warning-text">
+          <strong>This action cannot be undone.</strong>
+          Confirm your password and type <code>DELETE</code> to continue.
+        </p>
+
+        <div class="form-group">
+          <label for="deleteAccountPassword">Confirm your password</label>
+          <div class="password-field">
+            <input type="password" id="deleteAccountPassword" autocomplete="current-password" />
+            <button type="button" class="toggle-password" onclick="togglePasswordVisibility('deleteAccountPassword')">Show</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="deleteAccountConfirm">Type DELETE to confirm</label>
+          <input type="text" id="deleteAccountConfirm" placeholder="DELETE" autocomplete="off" />
+        </div>
+
+        <div class="delete-account-actions">
+          <button type="button" class="btn-secondary" onclick="PrimeScoreApp.toggleDeleteAccountPanel(false)">Cancel</button>
+          <button type="button" class="btn-danger" onclick="PrimeScoreApp.deleteAccount()">Permanently delete account</button>
+        </div>
+
+        <p class="error-message" id="deleteAccountMsg"></p>
+      </div>
+    </div>
+  </div>
+</section>

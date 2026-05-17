@@ -1,0 +1,26 @@
+<section id="profilePage" class="page">
+  <div class="container">
+    <h2>My Profile</h2>
+
+    <div class="section">
+      <div class="form-group">
+        <label for="profileUsername">Username</label>
+        <input type="text" id="profileUsername" minlength="3" />
+      </div>
+      <div class="form-group">
+        <label for="profileEmail">Email</label>
+        <input type="email" id="profileEmail" />
+      </div>
+      <div class="form-group">
+        <label for="profileDisplayName">Display name</label>
+        <input type="text" id="profileDisplayName" />
+      </div>
+      <div class="form-group">
+        <label for="profileBio">Bio</label>
+        <textarea id="profileBio" rows="4"></textarea>
+      </div>
+      <button onclick="PrimeScoreApp.saveProfile()" class="btn-primary">Save Profile</button>
+      <p class="error-message" id="profileMsg"></p>
+    </div>
+  </div>
+</section>

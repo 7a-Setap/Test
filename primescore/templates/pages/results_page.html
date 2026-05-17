@@ -1,0 +1,17 @@
+<section id="resultsPage" class="page">
+  <div class="container">
+    <div class="section-header">
+      <h2>Recent Results</h2>
+      <select id="resultsLeague" onchange="PrimeScoreApp.loadResults()">
+        <option value="PL">Premier League</option>
+        <option value="CL">Champions League</option>
+        <option value="BL1">Bundesliga</option>
+        <option value="SA">Serie A</option>
+        <option value="PD">La Liga</option>
+        <option value="FL1">Ligue 1</option>
+      </select>
+    </div>
+    <p class="error-message" id="resultsError"></p>
+    <div id="resultsList" class="matches-list"></div>
+  </div>
+</section>

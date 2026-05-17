@@ -1,0 +1,50 @@
+<section id="comparePage" class="page">
+  <div class="container">
+    <h2>Compare</h2>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showCompareTab('compareTeamsTab', this)">Teams</button>
+      <button class="tab-btn" onclick="showCompareTab('comparePlayersTab', this)">Players</button>
+    </div>
+
+    <div id="compareTeamsTab" class="tab-content active">
+      <div class="compare-controls">
+        <label for="teamCompareCount">Number of teams</label>
+        <select id="teamCompareCount" onchange="updateTeamCompareInputs()">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+
+        <label for="teamLeagueFilter">League</label>
+        <select id="teamLeagueFilter">
+          <option value="">Any League</option>
+          <option value="PL">Premier League</option>
+          <option value="CL">Champions League</option>
+          <option value="BL1">Bundesliga</option>
+          <option value="SA">Serie A</option>
+          <option value="PD">La Liga</option>
+          <option value="FL1">Ligue 1</option>
+        </select>
+      </div>
+
+      <div id="teamCompareInputs" class="compare-inputs-dynamic"></div>
+      <button onclick="compareTeamsMultiple()" class="btn-primary">Compare Teams</button>
+      <div id="teamComparisonResult" class="comparison-result"></div>
+    </div>
+
+    <div id="comparePlayersTab" class="tab-content" style="display:none">
+      <div class="compare-controls">
+        <label for="playerCompareCount">Number of players</label>
+        <select id="playerCompareCount" onchange="updatePlayerCompareInputs()">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </div>
+
+      <div id="playerCompareInputs" class="compare-inputs-dynamic"></div>
+      <button onclick="comparePlayersMultiple()" class="btn-primary">Compare Players</button>
+      <div id="playerComparisonResult" class="comparison-result"></div>
+    </div>
+  </div>
+</section>

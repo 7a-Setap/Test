@@ -1,0 +1,63 @@
+<section id="homePage" class="page">
+  <div class="container">
+    <h2>Welcome back, <span id="welcomeName"></span></h2>
+    <div id="firstTimeMessage" class="info-banner" style="display:none">
+      <p>Add favourites to personalise the home screen.</p>
+      <button onclick="navigateTo('favourites')" class="btn-primary">Open favourites</button>
+    </div>
+
+    <div class="section" id="favouritesSummary">
+      <div class="section-header">
+        <h3>My Favourites</h3>
+        <div class="league-switcher" id="summarySwitcher">
+          <button id="summaryPrev" type="button" class="btn-secondary switch-btn" onclick="PrimeScoreApp.cycleSummaryItem(-1)" aria-label="Previous">&larr;</button>
+          <span id="summaryPosition" class="league-switcher-label"></span>
+          <button id="summaryNext" type="button" class="btn-secondary switch-btn" onclick="PrimeScoreApp.cycleSummaryItem(1)" aria-label="Next">&rarr;</button>
+        </div>
+      </div>
+      <div class="summary-tabs">
+        <button class="summary-tab active" onclick="PrimeScoreApp.showSummaryTab('teams', event)">Teams <span class="badge-count" id="teamsCount">0</span></button>
+        <button class="summary-tab" onclick="PrimeScoreApp.showSummaryTab('players', event)">Players <span class="badge-count" id="playersCount">0</span></button>
+        <button class="summary-tab" onclick="PrimeScoreApp.showSummaryTab('leagues', event)">Leagues <span class="badge-count" id="leaguesCount">0</span></button>
+      </div>
+      <div id="summaryContent" class="summary-content"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <h3>Live Matches</h3>
+        <div class="match-feed-toggle">
+          <button id="toggleAllMatches" class="tab-btn active" onclick="PrimeScoreApp.setMatchFeedMode('all')">All Matches</button>
+          <button id="toggleMyTeams" class="tab-btn" onclick="PrimeScoreApp.setMatchFeedMode('my_teams')">My Teams</button>
+        </div>
+        <button onclick="refreshLiveMatches()" class="btn-secondary">Refresh</button>
+      </div>
+      <div id="liveMatchesHome" class="matches-grid"></div>
+    </div>
+
+    <div class="section">
+      <h3>Upcoming Fixtures</h3>
+      <div id="upcomingFixturesHome" class="matches-grid"></div>
+    </div>
+
+    <div class="section">
+      <h3>Recent Results</h3>
+      <div id="recentResultsHome" class="matches-grid"></div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <div>
+          <h3>League Table</h3>
+          <p id="homeLeagueName" class="subtitle">Premier League</p>
+        </div>
+        <div class="league-switcher" id="homeLeagueSwitcher">
+          <button id="homeLeaguePrev" type="button" class="btn-secondary switch-btn" onclick="cycleHomeLeague(-1)" aria-label="Previous favourite league">&larr;</button>
+          <span id="homeLeaguePosition" class="league-switcher-label">Default league</span>
+          <button id="homeLeagueNext" type="button" class="btn-secondary switch-btn" onclick="cycleHomeLeague(1)" aria-label="Next favourite league">&rarr;</button>
+        </div>
+      </div>
+      <div id="leagueTablesHome" class="league-tables-grid"></div>
+    </div>
+  </div>
+</section>

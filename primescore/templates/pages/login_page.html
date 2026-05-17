@@ -1,0 +1,71 @@
+<section id="loginPage" class="page active">
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Welcome to PrimeScore</h2>
+      <p class="subtitle">Football stats in one place.</p>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="login" onclick="switchTab('login')">Login</button>
+        <button class="tab-btn" data-tab="register" onclick="switchTab('register')">Register</button>
+      </div>
+
+      <form id="loginForm" class="auth-form active">
+        <div class="form-group">
+          <label for="loginUsername">Username</label>
+          <input type="text" id="loginUsername" required autocomplete="username" />
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <div class="password-field">
+            <input type="password" id="loginPassword" required autocomplete="current-password" />
+            <button type="button" class="toggle-password" onclick="togglePasswordVisibility('loginPassword')">Show</button>
+          </div>
+        </div>
+        <div class="form-link">
+          <a href="#" onclick="showForgotPassword(); return false;">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn-primary" id="loginButton">Login</button>
+        <p class="error-message" id="loginError"></p>
+      </form>
+
+      <form id="registerForm" class="auth-form">
+        <div class="form-group">
+          <label for="registerUsername">Username</label>
+          <input type="text" id="registerUsername" required minlength="3" autocomplete="username" />
+        </div>
+        <div class="form-group">
+          <label for="registerEmail">Email</label>
+          <input type="email" id="registerEmail" required autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="registerPassword">Password</label>
+          <div class="password-field">
+            <input type="password" id="registerPassword" required minlength="8" autocomplete="new-password" />
+            <button type="button" class="toggle-password" onclick="togglePasswordVisibility('registerPassword')">Show</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="registerPasswordConfirm">Confirm Password</label>
+          <div class="password-field">
+            <input type="password" id="registerPasswordConfirm" required autocomplete="new-password" />
+            <button type="button" class="toggle-password" onclick="togglePasswordVisibility('registerPasswordConfirm')">Show</button>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary" id="registerButton">Create Account</button>
+        <p class="error-message" id="registerError"></p>
+      </form>
+
+      <form id="forgotPasswordForm" class="auth-form">
+        <div class="form-group">
+          <label for="forgotEmail">Email</label>
+          <input type="email" id="forgotEmail" required autocomplete="email" />
+        </div>
+        <button type="submit" class="btn-primary" id="forgotPasswordButton">Send Reset Link</button>
+        <p class="error-message" id="forgotError"></p>
+        <div class="form-link">
+          <a href="#" onclick="switchTab('login'); return false;">Back to login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

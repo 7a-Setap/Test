@@ -1,0 +1,61 @@
+<section id="favouritesPage" class="page">
+  <div class="container">
+    <h2>Favourites</h2>
+
+    <div class="section">
+      <h3>Current favourites</h3>
+      <div class="cards-grid">
+        <div class="card">
+          <h4>Teams</h4>
+          <div id="favTeamsList"></div>
+        </div>
+        <div class="card">
+          <h4>Players</h4>
+          <div id="favPlayersList"></div>
+        </div>
+        <div class="card">
+          <h4>Leagues</h4>
+          <div id="favLeaguesList"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Edit favourites</h3>
+
+      <div class="form-group">
+        <label>Teams <span style="color:var(--muted);font-weight:400;">(max 5)</span></label>
+        <div class="fav-tags" id="favTeamsTags"></div>
+        <div class="autocomplete-wrapper">
+          <input type="text" id="favTeamsSearch" placeholder="Search for a team (4+ chars)…" autocomplete="off" />
+          <div class="autocomplete-suggestions" id="favTeamsSuggestions" style="display:none"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Players <span style="color:var(--muted);font-weight:400;">(max 10)</span></label>
+        <div class="fav-tags" id="favPlayersTags"></div>
+        <div class="autocomplete-wrapper">
+          <input type="text" id="favPlayersTeamSearch" placeholder="Search a team (4+ chars) to browse players…" autocomplete="off" />
+          <div class="autocomplete-suggestions" id="favPlayersTeamSuggestions" style="display:none"></div>
+        </div>
+        <div id="favPlayersSquad" style="display:none">
+          <p id="favPlayersSquadLabel" class="squad-label"></p>
+          <div id="favPlayersSquadList" class="squad-list"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Leagues <span style="color:var(--muted);font-weight:400;">(max 3)</span></label>
+        <div class="fav-tags" id="favLeaguesTags"></div>
+        <div class="autocomplete-wrapper">
+          <input type="text" id="favLeaguesSearch" placeholder="Search for a league (4+ chars)…" autocomplete="off" />
+          <div class="autocomplete-suggestions" id="favLeaguesSuggestions" style="display:none"></div>
+        </div>
+      </div>
+
+      <button onclick="PrimeScoreApp.saveFavourites()" class="btn-primary">Save Favourites</button>
+      <p class="error-message" id="favMsg"></p>
+    </div>
+  </div>
+</section>

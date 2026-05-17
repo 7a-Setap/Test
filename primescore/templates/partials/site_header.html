@@ -1,0 +1,26 @@
+<header class="top-header">
+  <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleSidebar()" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="logo-center">
+    <a href="#" onclick="goToHome(); return false;" class="logo-link">
+      <h1>PrimeScore</h1>
+    </a>
+  </div>
+
+  <div class="profile-section" id="profileSection" style="display:none">
+    <button class="profile-btn" onclick="toggleProfileMenu()" aria-label="Profile menu">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2315803d'%3E%3Cpath d='M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z'/%3E%3C/svg%3E" alt="Profile" />
+      <span id="displayName"></span>
+    </button>
+    <div class="profile-dropdown" id="profileDropdown">
+      <div class="dropdown-item" onclick="navigateTo('profile')">My Profile</div>
+      <div class="dropdown-item" onclick="navigateTo('settings')">Settings</div>
+      <div class="dropdown-divider"></div>
+      <div class="dropdown-item logout-item" onclick="logout()">Logout</div>
+    </div>
+  </div>
+</header>
