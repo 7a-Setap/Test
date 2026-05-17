@@ -8,7 +8,7 @@ These tests focus on route logic that sits between user input and persistence:
 """
 
 import routes.favourites_routes as favourites_routes
-from tests.helpers import build_dbcontext_patch
+from helpers import build_dbcontext_patch
 
 
 def test_get_favourites_returns_saved_display_names_for_logged_in_user(authenticated_client, monkeypatch):
