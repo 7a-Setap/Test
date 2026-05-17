@@ -10,7 +10,7 @@ from werkzeug.security import generate_password_hash
 
 import routes.notification_routes as notification_routes
 import routes.profile_routes as profile_routes
-from tests.helpers import build_dbcontext_patch
+from helpers import build_dbcontext_patch
 
 
 def test_get_profile_returns_current_user_details(authenticated_client, monkeypatch):
