@@ -15,7 +15,7 @@ manager so we can verify:
 from werkzeug.security import generate_password_hash
 
 import routes.authentication_routes as authentication_routes
-from tests.helpers import build_dbcontext_patch
+from helpers import build_dbcontext_patch
 
 
 def test_register_creates_user_and_seeds_companion_rows(client, monkeypatch):
