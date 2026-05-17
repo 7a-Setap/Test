@@ -16,7 +16,7 @@ from pathlib import Path
 import pytest
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[0]
 PRIMESCORE_ROOT = PROJECT_ROOT / "primescore"
 
 if str(PRIMESCORE_ROOT) not in sys.path:
